@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>RONIN — Cinematic motion for product brands</title>
+<meta name="description" content="RONIN is a one-person creative operator turning products into cinematic motion ads, brand films and creator content. Premium work, shipped in days." />
+
+<!--
+  PORTFOLIO VIDEOS
+  These point to Higgsfield CDN URLs so the page previews immediately.
+  Those links can expire. Before publishing for real:
+    1. Download the 3 .mp4 files + 3 poster .png files from Higgsfield.
+    2. Drop them in /landing/assets/
+    3. Swap each CDN URL below for the local path, e.g. src="assets/voltage.mp4"
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+<style>
+  :root{
+    --bg:#0a0a0b;
+    --bg-2:#111114;
+    --ink:#f4f4f5;
+    --muted:#8a8a93;
+    --line:rgba(255,255,255,.10);
+    --accent:#19e3c2;     /* electric teal */
+    --accent-2:#ff3d8b;   /* magenta kick  */
+    --max:1180px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,.wm{font-family:'Space Grotesk','Inter',sans-serif;letter-spacing:-.02em;line-height:1.05}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+  .accent{color:var(--accent)}
+  .grad{background:linear-gradient(100deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent}
+
+  /* NAV */
+  header{position:sticky;top:0;z-index:50;backdrop-filter:blur(10px);background:rgba(10,10,11,.6);border-bottom:1px solid var(--line)}
+  nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .wm{font-weight:700;font-size:20px;letter-spacing:.18em}
+  .wm small{font-weight:400;letter-spacing:.25em;font-size:10px;color:var(--muted);display:block;margin-top:-2px}
+  .nav-links{display:flex;gap:28px;align-items:center}
+  .nav-links a{color:var(--muted);font-size:14px;font-weight:500;transition:color .2s}
+  .nav-links a:hover{color:var(--ink)}
+  .btn{
+    display:inline-block;font-weight:600;font-size:14px;
+    padding:11px 20px;border-radius:999px;
+    background:var(--ink);color:#0a0a0b;transition:transform .15s,box-shadow .2s;
+  }
+  .btn:hover{transform:translateY(-1px);box-shadow:0 8px 30px rgba(255,255,255,.12)}
+  .btn-ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+  .btn-ghost:hover{border-color:var(--ink);box-shadow:none}
+  @media(max-width:680px){.nav-links a:not(.btn){display:none}}
+
+  /* HERO */
+  .hero{position:relative;padding:96px 0 64px;overflow:hidden}
+  .hero-glow{position:absolute;inset:0;z-index:0;pointer-events:none;
+    background:
+      radial-gradient(600px 320px at 18% 10%,rgba(25,227,194,.16),transparent 60%),
+      radial-gradient(560px 340px at 92% 30%,rgba(255,61,139,.14),transparent 60%);}
+  .hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.25fr .75fr;gap:48px;align-items:center}
+  .eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:22px}
+  .dot{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px rgba(25,227,194,.15)}
+  h1{font-size:clamp(38px,6vw,68px);font-weight:700;margin-bottom:22px}
+  .lead{font-size:clamp(16px,2.1vw,19px);color:#c9c9d1;max-width:560px;margin-bottom:32px}
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+  .hero-meta{margin-top:34px;display:flex;gap:30px;flex-wrap:wrap}
+  .hero-meta div span{display:block}
+  .hero-meta .n{font-family:'Space Grotesk';font-size:24px;font-weight:700}
+  .hero-meta .l{font-size:12.5px;color:var(--muted)}
+  .hero-video{position:relative;border-radius:18px;overflow:hidden;aspect-ratio:9/16;border:1px solid var(--line);box-shadow:0 30px 80px rgba(0,0,0,.55)}
+  .hero-video video{width:100%;height:100%;object-fit:cover;display:block}
+  .hero-video .tag{position:absolute;left:12px;bottom:12px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;background:rgba(10,10,11,.7);border:1px solid var(--line);padding:6px 10px;border-radius:8px;color:#dcdce2}
+  @media(max-width:860px){.hero-grid{grid-template-columns:1fr}.hero-video{max-width:300px;margin:8px auto 0}}
+
+  /* SECTION SHELL */
+  section{padding:84px 0;border-top:1px solid var(--line)}
+  .sec-head{margin-bottom:44px;max-width:640px}
+  .sec-tag{font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+  .sec-head h2{font-size:clamp(28px,4vw,42px);font-weight:700;margin-bottom:14px}
+  .sec-head p{color:var(--muted);font-size:16px}
+
+  /* WORK */
+  .work-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .card{background:var(--bg-2);border:1px solid var(--line);border-radius:16px;overflow:hidden;transition:transform .2s,border-color .2s}
+  .card:hover{transform:translateY(-4px);border-color:rgba(255,255,255,.22)}
+  .card .v{position:relative;aspect-ratio:9/16;background:#000}
+  .card video{width:100%;height:100%;object-fit:cover;display:block}
+  .card .body{padding:18px 18px 22px}
+  .card h3{font-size:20px;font-weight:700;margin-bottom:6px}
+  .card .role{font-size:13px;color:var(--accent);margin-bottom:10px}
+  .card p{font-size:14px;color:var(--muted);margin-bottom:14px}
+  .chips{display:flex;flex-wrap:wrap;gap:7px}
+  .chip{font-size:11px;letter-spacing:.04em;color:#cfcfd6;border:1px solid var(--line);border-radius:999px;padding:5px 10px}
+  @media(max-width:860px){.work-grid{grid-template-columns:1fr;max-width:360px;margin:0 auto}}
+
+  /* SERVICES */
+  .svc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  .svc{border:1px solid var(--line);border-radius:14px;padding:26px;background:linear-gradient(180deg,rgba(255,255,255,.02),transparent)}
+  .svc .num{font-family:'Space Grotesk';font-size:13px;color:var(--accent);letter-spacing:.1em}
+  .svc h3{font-size:21px;font-weight:700;margin:10px 0 8px}
+  .svc p{font-size:14.5px;color:var(--muted)}
+  @media(max-width:680px){.svc-grid{grid-template-columns:1fr}}
+
+  /* APPROACH */
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .step{padding:26px;border:1px solid var(--line);border-radius:14px}
+  .step .k{font-family:'Space Grotesk';font-size:34px;font-weight:700;background:linear-gradient(100deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .step h3{font-size:18px;margin:8px 0 8px}
+  .step p{font-size:14px;color:var(--muted)}
+  @media(max-width:860px){.steps{grid-template-columns:1fr}}
+
+  /* CONTACT */
+  .cta{position:relative;overflow:hidden;border:1px solid var(--line);border-radius:24px;padding:64px 40px;text-align:center;background:var(--bg-2)}
+  .cta .glow{position:absolute;inset:0;background:radial-gradient(500px 240px at 50% 0%,rgba(25,227,194,.16),transparent 70%);pointer-events:none}
+  .cta h2{position:relative;font-size:clamp(28px,4.4vw,46px);font-weight:700;margin-bottom:16px}
+  .cta p{position:relative;color:var(--muted);max-width:520px;margin:0 auto 30px;font-size:16px}
+  .cta .btn{position:relative;font-size:15px;padding:14px 26px}
+
+  footer{border-top:1px solid var(--line);padding:34px 0;color:var(--muted);font-size:13px}
+  .foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;align-items:center}
+  .foot a{color:var(--muted)}
+  .foot a:hover{color:var(--ink)}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <nav>
+      <div class="wm">RONIN<small>MOTION STUDIO</small></div>
+      <div class="nav-links">
+        <a href="#work">Work</a>
+        <a href="#services">Services</a>
+        <a href="#approach">Approach</a>
+        <a class="btn" href="mailto:gustavoplatroni@gmail.com?subject=Project%20inquiry">Start a project</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" style="border-top:none">
+  <div class="hero-glow"></div>
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow"><span class="dot"></span> Independent creative operator</div>
+      <h1>Cinematic motion for product brands — <span class="grad">without the agency wait.</span></h1>
+      <p class="lead">I turn products into scroll-stopping motion ads, brand films and creator-style content that make small brands look premium — built with a lean, modern pipeline, so you get agency-grade work without the agency timeline or price.</p>
+      <div class="hero-cta">
+        <a class="btn" href="mailto:gustavoplatroni@gmail.com?subject=Project%20inquiry">Start a project</a>
+        <a class="btn btn-ghost" href="#work">See the work</a>
+      </div>
+      <div class="hero-meta">
+        <div><span class="n">48h</span><span class="l">typical first cut</span></div>
+        <div><span class="n">9:16 · 16:9</span><span class="l">any format</span></div>
+        <div><span class="n">Ads · Promos · UGC</span><span class="l">full-stack creative</span></div>
+      </div>
+    </div>
+    <div class="hero-video">
+      <video src="https://d8j0ntlcm91z4.cloudfront.net/user_3ENNcM9w33uxwlMFbbRnvLrFrkq/hf_20260622_220129_c8813e06-06e1-472d-b614-4f05adce2c2b.mp4"
+             poster="https://d8j0ntlcm91z4.cloudfront.net/user_3ENNcM9w33uxwlMFbbRnvLrFrkq/hf_20260622_215145_f96af777-e065-4224-a89d-3dbaef33af89.png"
+             autoplay muted loop playsinline preload="metadata"></video>
+      <span class="tag">VOLTAGE · Product ad</span>
+    </div>
+  </div>
+</section>
+
+<!-- WORK -->
+<section id="work">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-tag">Selected work</div>
+      <h2>Three ways a product can move.</h2>
+      <p>Each piece below was concepted, art-directed and produced end-to-end — from the look to the final cut.</p>
+    </div>
+    <div class="work-grid">
+
+      <article class="card">
+        <div class="v">
+          <video src="https://d8j0ntlcm91z4.cloudfront.net/user_3ENNcM9w33uxwlMFbbRnvLrFrkq/hf_20260622_220129_c8813e06-06e1-472d-b614-4f05adce2c2b.mp4"
+                 poster="https://d8j0ntlcm91z4.cloudfront.net/user_3ENNcM9w33uxwlMFbbRnvLrFrkq/hf_20260622_215145_f96af777-e065-4224-a89d-3dbaef33af89.png"
+                 muted loop playsinline preload="metadata"
+                 onmouseover="this.play()" onmouseout="this.pause()" controls></video>
+        </div>
+        <div class="body">
+          <h3>VOLTAGE</h3>
+          <div class="role">Energy-drink launch spot</div>
+          <p>A hyper-kinetic product ad — neon, ice, motion blur and a hard logo lock. Built to stop the scroll and sell energy in 15 seconds.</p>
+          <div class="chips"><span class="chip">Product Ad</span><span class="chip">Hyper Motion</span><span class="chip">15s · 9:16</span></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="v">
+          <video src="https://d8j0ntlcm91z4.cloudfront.net/user_3ENNcM9w33uxwlMFbbRnvLrFrkq/hf_20260622_221110_5d6ff4f8-8e4f-47d3-a4d7-8841a3bd5e69.mp4"
+                 poster="https://d8j0ntlcm91z4.cloudfront.net/user_3ENNcM9w33uxwlMFbbRnvLrFrkq/hf_20260622_220511_de398813-a386-40e1-8031-2700e2eec479.png"
+                 muted loop playsinline preload="metadata"
+                 onmouseover="this.play()" onmouseout="this.pause()" controls></video>
+        </div>
+        <div class="body">
+          <h3>LUMA</h3>
+          <div class="role">Fintech app promo</div>
+          <p>Calm, premium classic motion for a finance app — soft gold light, floating UI and a serene brand lock. Minimal, expensive, trustworthy.</p>
+          <div class="chips"><span class="chip">App Promo</span><span class="chip">Classic Motion</span><span class="chip">15s · 9:16</span></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="v">
+          <video src="https://d8j0ntlcm91z4.cloudfront.net/user_3ENNcM9w33uxwlMFbbRnvLrFrkq/hf_20260622_225510_69d9f0ee-f2b1-4ad9-89c4-f823b8a2964b.mp4"
+                 poster="https://d8j0ntlcm91z4.cloudfront.net/user_3ENNcM9w33uxwlMFbbRnvLrFrkq/hf_20260622_225233_31c7c275-a7d5-48c5-8316-78aefbe42ec5.png"
+                 muted loop playsinline preload="metadata"
+                 onmouseover="this.play()" onmouseout="this.pause()" controls></video>
+        </div>
+        <div class="body">
+          <h3>Creator UGC</h3>
+          <div class="role">Native social content</div>
+          <p>Authentic creator-style product moment — handheld, candid, platform-native. The kind of content that feels like a friend, not an ad.</p>
+          <div class="chips"><span class="chip">UGC</span><span class="chip">Social-first</span><span class="chip">9:16</span></div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-tag">What I do</div>
+      <h2>One operator. The whole creative stack.</h2>
+      <p>No agency overhead, no hand-offs. You brief one person and get the finished asset.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc"><div class="num">01</div><h3>Product motion ads</h3><p>Scroll-stopping spots for physical products — the kind that make a launch look funded.</p></div>
+      <div class="svc"><div class="num">02</div><h3>Brand &amp; app promos</h3><p>Logo reveals, app walkthroughs and brand films with a clean, premium finish.</p></div>
+      <div class="svc"><div class="num">03</div><h3>UGC / creator content</h3><p>Native, authentic-feeling social content that converts without looking like advertising.</p></div>
+      <div class="svc"><div class="num">04</div><h3>Landing pages</h3><p>Fast, conversion-focused pages to put the new creative to work.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- APPROACH -->
+<section id="approach">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-tag">How it works</div>
+      <h2>Lean, founder-friendly.</h2>
+      <p>A lean, modern pipeline means more directions, faster iterations and a price that fits a launching brand — without cutting the polish.</p>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="k">01</div><h3>Brief</h3><p>You send the product and the goal. I come back with a clear direction and a storyboard — no long discovery calls.</p></div>
+      <div class="step"><div class="k">02</div><h3>Build</h3><p>I produce the look and the cut with a fast, modern toolchain, so revisions are cheap and quick.</p></div>
+      <div class="step"><div class="k">03</div><h3>Ship</h3><p>You get final assets in the formats you need — ready for paid, organic and your store.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="wrap">
+    <div class="cta">
+      <div class="glow"></div>
+      <h2>Got a product worth showing off?</h2>
+      <p>Tell me what you're launching. I'll reply with a direction and what it would take to bring it to life.</p>
+      <a class="btn" href="mailto:gustavoplatroni@gmail.com?subject=Project%20inquiry&body=Hi%20RONIN%2C%20here's%20what%20I'm%20launching%3A">Start a project →</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <div class="wm" style="font-size:16px">RONIN<small>MOTION STUDIO</small></div>
+    <div>Cinematic motion for product brands · © 2026</div>
+    <div><a href="mailto:gustavoplatroni@gmail.com">gustavoplatroni@gmail.com</a></div>
+  </div>
+</footer>
+
+</body>
+</html>
